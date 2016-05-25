@@ -16,11 +16,11 @@ class filledRect{
 	}
 	
 	update(){
-		if(nextlife){
-			this.attr({'fill':dead});
+		if(this.nextlife){
+			this.rect.attr({'fill':dead});
 		}
 		else{
-			this.attr({'fill':alive});
+			this.rect.attr({'fill':alive});
 		}
 	}
 	
@@ -132,22 +132,23 @@ function startLive(){
 	for(var x = 0;x<paperSide;x++){
 		for(var y = 0;y<paperSide;y++){
 			var rect = rects[x][y];
-			if(rect.filled = false){
+			if(rect.filled){
 				switch(countNeighbour(rect)){
-				case 0:
-	          		case 1: {rect.nextlive=false;rect.update();break;}
+					case 0:
+	          		case 1: {rect.nextlife=false;rect.rect.attr({'fill':dead});break;}
 	          		case 2: 
 	          		case 3: break;
 	          		case 4:
 	          		case 5:
 	          		case 6:
 	          		case 7:
-	          		case 8: {rect.nextlive=false;rect.update();break;}
+	          		case 8: {rect.nextlife=false;rect.rect.attr({'fill':dead});break;}
 				}
 			}
 			else{//it's a dead cell
 				if(countNeighbour(rect)==3){
-					rect.nextlive = true;
+					rect.nextlife = true;
+					rect.rect.attr({'fill':alive});
 				}
 			}
 		}
