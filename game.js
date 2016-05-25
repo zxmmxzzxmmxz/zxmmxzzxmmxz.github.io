@@ -12,6 +12,20 @@ rects = new Array();{
 class filledRect{
 	filledRect(){
 		this.filled = false;
+		this.nextlife = false;
+	}
+	
+	function update(){
+		if(nextlife){
+			this.attr({'fill':dead});
+		}
+		else{
+			this.attr({'fill':alive});
+		}
+	}
+	
+	function setfilled(){
+		this.filled = this.nextlife;
 	}
 }
 
@@ -118,29 +132,37 @@ function startLive(){
 	for(var x = 0;x<paperSide;x++){
 		for(var y = 0;y<paperSide;y++){
 			var rect = rects[x][y];
-			if(rect.filled){
+			if(rect.filled = false){
 				switch(countNeighbour(rect)){
-					case 0:
-	          		case 1: {rect.filled = false; rect.rect.attr({'fill':dead});break;}
+				case 0:
+	          		case 1: {rect.nextlive=false;rect.update();break;}
 	          		case 2: 
 	          		case 3: break;
 	          		case 4:
 	          		case 5:
 	          		case 6:
 	          		case 7:
-	          		case 8: {rect.filled = false;rect.rect.attr({'fill':dead});break;}
+	          		case 8: {rect.nextlive=false;rect.update();break;}
 				}
 			}
 			else{//it's a dead cell
 				if(countNeighbour(rect)==3){
-					rect.filled = true;
-					rect.rect.attr({'fill':alive});
+					rect.nextlive = true;
 				}
 			}
 		}
 	}
+	refresh_cells();
 	update_stats();
 
+}
+
+function refresh_cells(){
+	for(var x = 0;x<paperSide;x++){
+		for(var y = 0;y<paperSide;y++){
+			rects[x][y].setfilled();
+		}
+	}
 }
 
 function countNeighbour(rect){
