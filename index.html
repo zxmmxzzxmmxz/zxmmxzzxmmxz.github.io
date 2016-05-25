@@ -9,24 +9,50 @@
 <title>Game Of Life</title>
 </head> 
 <body>
-<h1 class="text-primary">Game Of Life</h1>
-<h2 class="text-primary">-----------Population simulator</h2>
-<h3 class="text-primary">Black is live, white is dead.Add some(or Sheldon) then start, life will die because of low-population or overpopulation, dead can become alive again because it has exactly 3 lives around it.</h2>
+<div class="col-sm-4" >
+<div class = "panel panel-default">
+	<div class = "panel-heading">
+		<h1 class="text-primary">Game Of Life</h1>
+	</div>
+	<div class="panel-body">
+		<h4 class = "text-primary">Rules:</h4>
+        <ul>
+        	<li class = "text-primary">Every cell is a life, having 8 neighbours</li>
+        	<li class = "text-primary">Black means "alive"</li>
+        	<li class = "text-primary">White means "dead"</li>
+        	<li class = "text-primary">Cell will die if:<br> less than 2 neighbours alive or more than 4 alive, known as "Overpopulation"</li>
+        	<li class = "text-primary">Cell will become alive if:<br>exactly 3 neighbours alive, known as "Miracle"</li>
+        </ul>
+        <h4 class = "text-primary">Instructions:</h4>
+        <ul>
+        	<li class = "text-primary">Click "Add" to add some cells you want randomly</li>
+        	<li class = "text-primary">Click "Start" to simulate the population</li>
+        	<li class = "text-primary">Click "Stop" to stop the simulation</li>
+        	<li class = "text-primary">Click "Clear" to stop and clear all cells</li>
+        </ul>
+        <h3>HUGE TIP:</h3>
+        <h4>TRY "ADD SHELDON" !</h4>
+    </div>
+</div>>
+</div>
+<div id = "drawing" class = "col-md-20 col-md-offset-1">
+</div>
 <div id = "main" class = "container-fluid">
 <form class="form-inline">
 <div class = "form-group">
-Number of Random Lifes to Add:<input id="num_lives_start" class = "form-control">Time in total:<select id="time_type" class = "form-control">	
+<span class = "text-primary">Number of Random Lifes to Add:</span><input id="num_lives_start" class = "form-control"><span class = "text-primary">Time in total:</span><select id="time_type" class = "form-control">	
+																<option value="infinite">infinite</option>
 																<option value ="5">5 Seconds</option>
 																<option value ="10">10 Seconds</option>
 																<option value ="15">15 Seconds</option>
 																<option value ="20">20 Seconds</option>
 																<option value ="25">25 Seconds</option>
 																<option value ="30">30 Seconds</option>
-																<option value="infinite">infinite</option>
 															</select>
 </div>
 </form>
 </div>
+<br>
 <button id = "add" class="btn btn-primary">Add</button>
 <button id = "add_sheldon" class="btn btn-primary">Add Sheldon</button>  
 <button id = "start" class="btn btn-primary">Start</button>
@@ -34,8 +60,6 @@ Number of Random Lifes to Add:<input id="num_lives_start" class = "form-control"
 <button id = "clear" class="btn btn-primary">Clear</button>
 <div id = "stats">
 <p class="text-success">Lives:<span id = "lives" class = "badge">0</span></p>
-</div>
-<div id = "drawing" class = "col-md-3 col-md-offset-3">
 </div>
 </body>
 </html>
