@@ -15,7 +15,7 @@ class filledRect{
 		this.nextlife = false;
 	}
 	
-	function update(){
+	update(){
 		if(nextlife){
 			this.attr({'fill':dead});
 		}
@@ -24,7 +24,7 @@ class filledRect{
 		}
 	}
 	
-	function setfilled(){
+	setfilled(){
 		this.filled = this.nextlife;
 	}
 }
