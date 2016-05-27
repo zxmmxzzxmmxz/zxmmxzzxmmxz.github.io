@@ -26,6 +26,12 @@ class filledRect{
 	
 	setfilled(){
 		this.filled = this.nextlife;
+		if(this.filled){
+			this.rect.attr({'fill':alive});
+		}
+		else{
+			this.rect.attr({'fill':dead});
+		}
 	}
 }
 
@@ -57,6 +63,7 @@ $(document).ready(function(){
 			for(var y = 0;y<paperSide;y++){
 				var rect = rects[x][y];
 				rect.filled = false;
+				rect.nextlife = false;
 				rect.rect.attr({'fill':dead})
 			}
 		}
@@ -135,20 +142,19 @@ function startLive(){
 			if(rect.filled){
 				switch(countNeighbour(rect)){
 					case 0:
-	          		case 1: {rect.nextlife=false;rect.rect.attr({'fill':dead});break;}
+	          		case 1: {rect.nextlife=false;break;}
 	          		case 2: 
 	          		case 3: break;
 	          		case 4:
 	          		case 5:
 	          		case 6:
 	          		case 7:
-	          		case 8: {rect.nextlife=false;rect.rect.attr({'fill':dead});break;}
+	          		case 8: {rect.nextlife=false;break;}
 				}
 			}
 			else{//it's a dead cell
 				if(countNeighbour(rect)==3){
 					rect.nextlife = true;
-					rect.rect.attr({'fill':alive});
 				}
 			}
 		}
