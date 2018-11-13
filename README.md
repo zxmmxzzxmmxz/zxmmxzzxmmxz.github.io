@@ -1,37 +1,28 @@
-# Life's Stimulation Game
+Lifes Stimulation Game
+This is a web life stimulator that presents lives die/alive cycling
 
-This is a web life stimulator that presents lives die/alive cycling 
+Getting Started
+All you need to do is to just open it
 
-## Getting Started
+Prerequisites
+What things you need to install the software and how to install them
 
-All you need is to open it
+How to play this
+Rules are on the left, and you can either mark grid as life by clicking or enter total number of grids you want to be lives and let the system to generate those randomly.
 
-### Prerequisites
+Then click run, and enjoy!
 
-What things need to install the software and how to install them
-
-## How to play this
-
-Rules are on the left, and you can either mark grid as a life by clicking or enter total number of grids you want to be lives and let the system to generate those randomly.
-
-Click run and enjoy!
-
-## Built With
-
+Built With
 Javascript, Html
 
-## Contributing
-
+Contributing
 Anyone who wants to contribute please do make a pull request.
 
-## Authors
-
+Authors
 Ximin Zhang - Software Developer Intern - Solium Capatal Inc.
 
-## License
+License
+This project is licensed under the MIT License
 
-This project is licensed under the MIT License 
-
-## Acknowledgments
+Acknowledgments
 Inspired by our coding competition where we were asked to build a life simulator.
-
